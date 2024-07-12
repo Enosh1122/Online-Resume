@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #333;
+}
+
+header p {
+    margin: 5px 0;
+    color: #666;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+section h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.projects p .school h3 {
+    margin: 0;
+    color: #333;
+}
+
+.projects p .school p {
+    margin: 5px 0;
+    color: #666;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+}
+.custom-btn {
+      margin-left: 700px;
+      font-size: large;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      border: 2px solid #007bff; 
+      color: #007bff; 
+      background-color: transparent; 
+      padding: 10px 20px; 
+      border-radius: 5px; 
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .custom-btn:hover {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    .custom-btn:active {
+      background-color: #0056b3; 
+      color: #fff; 
+      border-color: #0056b3; 
+    }
+</style>
+</head>
+<body>
+    <section id="element-to-print">
+        <div class="container">
+            <header>
+                <h1>{{name}}</h1>
+                <p>Email: {{email}} | Phone: {{phone}}</p>
+            </header>
+            <section class="skills">
+                <h2>Skills</h2>
+                <p>{{skills}}</p>
+            </section>
+            <section class="projects">
+                <h2>Projects or Internship</h2>
+                    <p>{{projects}}</p>
+            </section>
+            <section class="education">
+                <h2>Education</h2>
+                <div class="school">
+                    <p>{{education}}</p>
+                </div>
+            </section>
+            <section class="certificates">
+                <h2>Certificates</h2>
+                <div class="certificate">
+                    <p>{{certificates}}</p>
+                </div>
+            </section>
+            <section class="address">
+                <h2>Addres:</h2>
+                <div class="school">
+                    <p>{{address}}</p>
+                </div>
+            </section>       
+        </div>
+    </section>
+    <button class="custom-btn" onclick="Download()">Download</button>
+<script>
+  function Download() {
+    var element = document.getElementById('element-to-print');
+        html2pdf(element);
+    }
+</script>
+<script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" 
+    integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+</script>
+</body>
+</html>
